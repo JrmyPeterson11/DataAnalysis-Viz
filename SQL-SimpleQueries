@@ -35,11 +35,10 @@ CREATE TABLE Employee(
 );
 
 /*
-4. Add rows into Department table
-(1, 'IT'),
-(2, 'Management'),
-(3, 'IT'),
-(4, 'Support');
+4. Add rows into Department table(1, 'IT'),
+	(2, 'Management'),
+	(3, 'IT'),
+	(4, 'Support');
 */
 INSERT INTO department(name)
 VALUES
