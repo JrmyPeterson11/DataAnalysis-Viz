@@ -8,4 +8,4 @@ def PGCD(a,b):
 a = int(input("Entrer la valeur de a : "))
 b = int(input("Entrer la valeur de b : "))
 
-print("Le PGCD de : ", a, "et le PGCD de : ", b, "est : ", PGCD(a,b))
+print("Le PGCD de : ", a, "et de : ", b, "est : ", PGCD(a,b))
