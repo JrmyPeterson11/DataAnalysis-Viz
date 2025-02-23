@@ -5,8 +5,16 @@ import seaborn as sns
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# Chargement des données
+
+# Charger le dataset
 df = pd.read_csv("customer_segmentation.csv")
+
+# Afficher les statistiques descriptives
+descriptive_stats = df.describe(include='all')
+print(descriptive_stats)
+
+# Sauvegarder le tableau sous format CSV pour une visualisation facile
+descriptive_stats.to_csv("statistiques_descriptives.csv")
 
 # 1. Présentation et description des données
 print("\nAperçu des données :")
