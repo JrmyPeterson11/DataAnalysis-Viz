@@ -26,7 +26,6 @@ print(df.head())
 print("\nInformations générales :")
 print(df.info())
 
-
 # 2. Analyse univariée
 plt.figure(figsize=(12,6))
 df.hist(bins=20, figsize=(12,8), color='skyblue', edgecolor='black')
