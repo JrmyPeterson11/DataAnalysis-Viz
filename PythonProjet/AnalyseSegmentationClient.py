@@ -11,18 +11,21 @@ df = pd.read_csv("customer_segmentation.csv")
 
 # Afficher les statistiques descriptives
 descriptive_stats = df.describe(include='all')
+print("\nStatistiques descriptives :")
 print(descriptive_stats)
-
-# Sauvegarder le tableau sous format CSV pour une visualisation facile
+# Optionnel de Sauvegarder le tableau sous format CSV pour une visualisation facile
 descriptive_stats.to_csv("statistiques_descriptives.csv")
+
+# On peut également le faire ainsi
+print("\nStatistiques descriptives :")
+print(df.describe())
 
 # 1. Présentation et description des données
 print("\nAperçu des données :")
 print(df.head())
 print("\nInformations générales :")
 print(df.info())
-print("\nStatistiques descriptives :")
-print(df.describe())
+
 
 # 2. Analyse univariée
 plt.figure(figsize=(12,6))
