@@ -32,6 +32,8 @@ df.hist(bins=20, figsize=(12,8), color='skyblue', edgecolor='black')
 plt.suptitle("Distribution des variables numériques")
 plt.show()
 
+-- 
+
 # 3. Analyse bivariée
 # Relation entre Revenu Annuel et Spending Score
 plt.figure(figsize=(8,6))
