@@ -34,7 +34,7 @@ plt.show()
 
 # Analyse des variables catégoriques
 plt.figure(figsize=(8,6))
-sns.countplot(data=df, x='Gender', palette='coolwarm')
+sns.countplot(data=df, x='Gender', hue='Gender', legend=False)
 plt.title("Répartition des genres")
 plt.show()
 
