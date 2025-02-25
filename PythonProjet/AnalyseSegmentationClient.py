@@ -51,6 +51,12 @@ sns.scatterplot(data=df, x='AnnualIncome', y='SpendingScore', hue='Gender')
 plt.title("Revenu annuel vs Score de dépense")
 plt.show()
 
+# Relation entre Revenu Annuel et Spending Score
+plt.figure(figsize=(8,6))
+sns.scatterplot(data=df, x='AnnualIncome', y='SpendingScore', hue='Gender', palette={'Female': 'pink', 'Male': 'blue'})
+plt.title("Revenu annuel vs Score de dépense")
+plt.show()
+
 # Relation entre Visites du site et Achats en ligne
 plt.figure(figsize=(8,6))
 sns.scatterplot(data=df, x='WebsiteVisits', y='OnlinePurchases', hue='Gender')
