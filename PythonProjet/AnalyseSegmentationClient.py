@@ -32,6 +32,17 @@ df.hist(bins=20, figsize=(12,8), color='skyblue', edgecolor='black')
 plt.suptitle("Distribution des variables numériques")
 plt.show()
 
+# Analyse des variables catégoriques
+plt.figure(figsize=(8,6))
+sns.countplot(data=df, x='Gender', palette='coolwarm')
+plt.title("Répartition des genres")
+plt.show()
+
+plt.figure(figsize=(10,6))
+sns.countplot(data=df, x='CategoryPreference', order=df['CategoryPreference'].value_counts().index, palette='viridis')
+plt.title("Distribution des préférences de catégorie")
+plt.xticks(rotation=45)
+plt.show()
 
 # 3. Analyse bivariée
 # Relation entre Revenu Annuel et Spending Score
