@@ -39,7 +39,7 @@ plt.title("Répartition des genres")
 plt.show()
 
 plt.figure(figsize=(10,6))
-sns.countplot(data=df, x='CategoryPreference', order=df['CategoryPreference'].value_counts().index, palette='viridis')
+sns.countplot(data=df, x='CategoryPreference', hue='CategoryPreference', order=df['CategoryPreference'].value_counts().index, palette='viridis', legend=False)
 plt.title("Distribution des préférences de catégorie")
 plt.xticks(rotation=45)
 plt.show()
