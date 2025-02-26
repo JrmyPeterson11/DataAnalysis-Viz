@@ -27,6 +27,18 @@ print("\nInformations générales :")
 print(df.info())
 
 # 2. Analyse univariée
+numeric_columns = list(df.select_dtypes(include=['int64', 'float64']).columns)
+for col in numeric_columns:
+    plt.figure(figsize=(12,5))
+    plt.subplot(1,2,1)
+    sns.histplot(df[col], bins=20, kde=True, color='skyblue')
+    plt.title(f"Histogramme de {col}")
+    
+    plt.subplot(1,2,2)
+    sns.boxplot(y=df[col], color='lightcoral')
+    plt.title(f"Boxplot de {col}")
+    
+    plt.show()
 plt.figure(figsize=(12,6))
 df.hist(bins=20, figsize=(12,8), color='skyblue', edgecolor='black')
 plt.suptitle("Distribution des variables numériques")
@@ -43,6 +55,8 @@ sns.countplot(data=df, x='CategoryPreference', hue='CategoryPreference', order=d
 plt.title("Distribution des préférences de catégorie")
 plt.xticks(rotation=45)
 plt.show()
+
+
 
 # 3. Analyse bivariée
 # Relation entre Revenu Annuel et Spending Score
