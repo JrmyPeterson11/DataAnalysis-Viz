@@ -56,7 +56,23 @@ plt.title("Distribution des préférences de catégorie")
 plt.xticks(rotation=45)
 plt.show()
 
-
+categorical_columns = df.select_dtypes(include=['object']).columns
+for col in categorical_columns:
+    plt.figure(figsize=(14,6))
+    
+    # Bar chart
+    plt.subplot(1,2,1)
+    palette = sns.color_palette('viridis', n_colors=len(df[col].unique()))
+sns.countplot(data=df, x=col, hue=col, order=df[col].value_counts().index, palette=palette, legend=False)
+    plt.title(f"Bar Chart de {col}")
+    plt.xticks(rotation=45)
+    
+    # Pie chart
+    plt.subplot(1,2,2)
+    df[col].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, colors=palette)
+    plt.title(f"Pie Chart de {col}")
+    plt.ylabel('')
+    
 
 # 3. Analyse bivariée
 # Relation entre Revenu Annuel et Spending Score
