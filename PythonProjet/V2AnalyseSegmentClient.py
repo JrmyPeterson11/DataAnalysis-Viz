@@ -293,3 +293,84 @@ axes[1].set_title('Visites web par niveau de dépense')
 plt.show()
 
 
+# 4. Analyse comportementale
+
+# Définition des couleurs via dictionnaires et listes 
+gender_colors = {'Female': '#ff9999', 'Male': '#6fa3ef'}  # Rouge clair et bleu clair
+spending_order = ['Faible', 'Moyen', 'Élevé']
+spending_colors = ['#76c893', '#f4a261', '#e63946']  # Vert, Orange, Rouge foncé
+
+# Analyse des visiteurs fréquents
+print("4.1 ANALYSE DES VISITEURS FRÉQUENTS")
+
+# Définition des visiteurs fréquents (top 25%)
+visits_threshold = df['WebsiteVisits'].quantile(0.75)
+df['VisitorType'] = df['WebsiteVisits'].apply(lambda x: 'Fréquent' if x >= visits_threshold else 'Normal')
+
+# Affichage du profil des visiteurs fréquents
+print("Profil des visiteurs fréquents:")
+print(df.groupby('VisitorType')[['Age', 'AnnualIncome', 'SpendingScore', 'OnlinePurchases']].mean().round(2))
+
+# Score de dépense selon le type de visiteur
+plt.figure(figsize=(10, 5))
+sns.boxplot(data=df, x='VisitorType', y='SpendingScore', palette=['#2ca02c', "#B0BEC5"])
+plt.title('Score de dépense selon le type de visiteur')
+plt.show()
+
+# Analyse des catégories préférées par sexe et âge
+print("4.2 ANALYSE DES CATÉGORIES PRÉFÉRÉES")
+
+# Création des groupes d'âge
+df['GroupeAge'] = pd.cut(df['Age'], bins=[0, 30, 45, 60, 100], labels=['18-30', '31-45', '46-60', '60+'])
+
+# Affichage des préférences
+preferences = df.pivot_table(index=['Gender', 'GroupeAge'], columns='CategoryPreference', aggfunc='size', fill_value=0)
+preferences_percent = preferences.div(preferences.sum(axis=1), axis=0) * 100
+print("Préférences de catégories par genre et âge (%):")
+print(preferences_percent.round(1))
+
+# Distribution des catégories préférées par genre
+plt.figure(figsize=(10, 5))
+sns.countplot(data=df, x='CategoryPreference', hue='Gender', palette=gender_colors)
+plt.title('Distribution des catégories préférées par genre')
+plt.xticks(rotation=45)
+plt.legend(title='Genre')
+plt.show()
+
+# Classification des clients selon leur aptitude à dépenser 
+
+print("4.3 CLASSIFICATION PAR NIVEAU DE DÉPENSE")
+
+# Fonction pour classifier les dépenses
+def classifier_depense(score):
+    if score < 33:
+        return 'Faible'
+    elif score < 66:
+        return 'Moyen'
+    else:
+        return 'Élevé'
+
+# Application de la fonction de classification
+df['NiveauDepense'] = df['SpendingScore'].apply(classifier_depense)
+
+# Affichage des caractéristiques moyennes
+print("Caractéristiques moyennes par niveau de dépense:")
+print(df.groupby('NiveauDepense')[['Age', 'AnnualIncome', 'OnlinePurchases', 'WebsiteVisits']].mean().round(2))
+
+# Définition de l'ordre des niveaux de dépense
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Revenu par niveau de dépense
+sns.boxplot(data=df, x='NiveauDepense', y='AnnualIncome', ax=axes[0], 
+            order=spending_order, palette=spending_colors)
+axes[0].set_title('Revenu par niveau de dépense')
+
+# Visites web par niveau de dépense
+sns.boxplot(data=df, x='NiveauDepense', y='WebsiteVisits', ax=axes[1], 
+            order=spending_order, palette=spending_colors)
+axes[1].set_title('Visites web par niveau de dépense')
+
+plt.show()
+
+
+
