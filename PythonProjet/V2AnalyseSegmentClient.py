@@ -87,7 +87,6 @@ for var in num_vars:
     
 
 # 2. Analyse univariée
-
 # On créé un dictionnaire et une liste pour définir les couleurs liées à gender et aux différentes catégories
 gender_colors = {'Female': '#ff9999', 'Male': '#6fa3ef'}  # Rouge clair et bleu clair
 category_colors = ['#9467bd', '#ff7f0e', '#2ca02c', '#e377c2', '#1f77b4']  # Couleurs pour les catégories
@@ -124,7 +123,6 @@ for var in cat_vars:
 
 
 # 3. Analyse bivariée
-
 print("3. ANALYSE BIVARIÉ")
 
 # On calcule la corrélation entre revenu et dépenses
