@@ -47,13 +47,11 @@ replacement_values = {
     'WebsiteVisits': df['WebsiteVisits'].median(),  # Médiane
     'CategoryPreference': df['CategoryPreference'].mode()[0]  # Mode
 }
-
 df.fillna(replacement_values, inplace=True)
 
 # Output finale après remplacement des valeurs manquantes
 print("Valeurs manquantes après remplacement:")
 print(df.isnull().sum())
-
 
 # 2. Analyse univariée
 # On créé un dictionnaire pour définir le code couleur de chaque variable quanti 
