@@ -149,7 +149,6 @@ print(f"p-value: {p_value}")
 
 
 # 3. Analyse bivariée
-
 # On Calcul la corrélation entre WebsiteVisits et OnlinePurchases
 corr = df['WebsiteVisits'].corr(df['OnlinePurchases'])
 
