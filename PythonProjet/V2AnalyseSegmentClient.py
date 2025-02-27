@@ -209,7 +209,6 @@ print("V de Cramer :", round(cramer_v, 3))
 
 
 # 4. Analyse comportementale
-
 # Définition des couleurs via dictionnaires et listes 
 gender_colors = {'Female': '#ff9999', 'Male': '#6fa3ef'}  # Rouge clair et bleu clair
 spending_order = ['Faible', 'Moyen', 'Élevé']
