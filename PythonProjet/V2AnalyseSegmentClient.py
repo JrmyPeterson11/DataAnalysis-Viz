@@ -14,7 +14,6 @@ df = pd.read_csv('customer_segmentation.csv')
 #1. Présentation et description des données
 print("1. PRÉSENTATION ET DESCRIPTION DES DONNÉES")
 
-
 # Aperçu des données
 print("Aperçu des données:")
 print(df.head())
