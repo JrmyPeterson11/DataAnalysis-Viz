@@ -252,7 +252,6 @@ plt.legend(title='Genre')
 plt.show()
 
 # Classification des clients selon leur aptitude à dépenser 
-
 print("4.3 CLASSIFICATION PAR NIVEAU DE DÉPENSE")
 
 # Fonction pour classifier les dépenses
