@@ -173,7 +173,6 @@ plt.xlabel("Nombre de Visites sur le Site")
 plt.ylabel("Achats en Ligne")
 plt.show()
 
-
 # 3. Analyse bivariée
 # Définition des couleurs pour chaque catégorie via un dictionnaire
 category_colors = {
