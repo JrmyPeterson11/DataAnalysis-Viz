@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from scipy import stats
 from scipy.stats import chi2_contingency
 
-   
+
 # Chargement des données, Lecture du fichier CSV
 df = pd.read_csv('customer_segmentation.csv')
 
