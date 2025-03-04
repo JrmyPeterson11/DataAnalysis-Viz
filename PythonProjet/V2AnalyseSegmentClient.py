@@ -11,7 +11,7 @@ from scipy.stats import chi2_contingency
 
 # Chargement des données, Lecture du fichier CSV
 df = pd.read_csv('customer_segmentation.csv')
-
+ 
 #1. Présentation et description des données
 print("1. PRÉSENTATION ET DESCRIPTION DES DONNÉES")
 
