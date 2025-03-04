@@ -22,7 +22,7 @@ print(df.head())
 # Info sur les variables
 print("Informations sur les variables:")
 print(df.info())
-
+ 
 # Stats descriptives
 print("Statistiques descriptives:")
 print(df.describe())
