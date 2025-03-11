@@ -12,7 +12,6 @@ CREATE TABLE time_series.location_temp_p(
 )PARTITION BY RANGE(event_hour);
 
 
-
 /* Create 12 partition nodes for that above table */
 -- range start value is inclusive, end value is exclusive
 CREATE TABLE time_series.location_temp_p1 PARTITION OF time_series.location_temp_p
