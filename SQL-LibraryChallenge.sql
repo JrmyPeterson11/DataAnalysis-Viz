@@ -18,7 +18,6 @@ WHERE BookID IN (
 AND ReturnedDate IS NULL;
 
 /* total available book */
-
 SELECT
 	(SELECT COUNT(BookID) AS TotalCopies
 	FROM Books
