@@ -14,7 +14,6 @@ WHERE store_id = 2;
 SELECT COUNT(*) FROM film
 WHERE rental_rate = 0.99;
 
-
 /* we want to see rental rate and how many movies are in each rental rate categories*/
 SELECT rental_rate, COUNT(*) AS total_number_of_movies
 FROM film
