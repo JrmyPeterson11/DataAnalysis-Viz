@@ -12,7 +12,6 @@ EXPLAIN ANALYZE SELECT * FROM staff;
 -- NOTE: if we are working with large amount data, we can use rows and width as a guide to understand the amount of data returned.
 EXPLAIN ANALYZE SELECT last_name FROM staff;
 
-
 /* As EXPLAIN just make estimation, rows=xxx sometimes a bit off by 1 or 2 
 when we run the actual query, the rows returned are 717. but using EXPLAIN, it said 715.
 */
