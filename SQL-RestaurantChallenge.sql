@@ -8,7 +8,6 @@ SELECT FirstName, LastName, Email
 FROM Customers
 ORDER BY LastName;
 
-
 /**************************************************************/
 /* Create a table to store information                        */
 /**************************************************************/
