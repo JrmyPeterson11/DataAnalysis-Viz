@@ -56,3 +56,5 @@ EXPLAIN ANALYZE SELECT * FROM staff WHERE salary > 75000;
 
 /* here index is used because salary cut off criteria is much more selective */
 EXPLAIN ANALYZE SELECT * FROM staff WHERE salary > 150000;
+
+
