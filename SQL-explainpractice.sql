@@ -30,7 +30,6 @@ WHERE salary > 75000;
 /* create index on salary column*/
 CREATE INDEX idx_staff_salary ON staff(salary);
 
-
 /* list all indexes*/
 SELECT
     tablename,
