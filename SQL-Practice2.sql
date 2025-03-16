@@ -2,7 +2,6 @@
 /* List all emmployees */
 SELECT * FROM employees LIMIT 10;
 
-
 /* How many departments? */
 SELECT COUNT(*) FROM departments;
 
