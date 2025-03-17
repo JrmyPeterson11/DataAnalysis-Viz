@@ -4,6 +4,7 @@
 	Group by use Split, Apply, Combine strategry.
 */
 
+
 /* How many employees worked in each department ? */
 SELECT d.dept_name AS "Department Name" ,COUNT(e.emp_no) AS "Number Of Employee"
 FROM employees e
