@@ -5,6 +5,7 @@ SELECT * FROM employees LIMIT 10;
 /* How many departments? */
 SELECT COUNT(*) FROM departments;
 
+
 /* How many times has Employee 10001 has a raise? */
 SELECT COUNT(*) AS Number_of_raises FROM salaries
 WHERE emp_no = 10001;
