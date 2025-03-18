@@ -3,7 +3,6 @@
 /*******************************************************/
 /* find the number of availalbe copies of Dracula      */
 /*******************************************************/
-
 /* check total copies of the book */
 SELECT *, COUNT(BookID) AS TotalCopies
 FROM Books
