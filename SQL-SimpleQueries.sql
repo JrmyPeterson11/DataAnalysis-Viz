@@ -8,7 +8,6 @@ DROP TABLE IF EXISTS Company;
 
 /*
 2. Create tables:
-
 Employee with attributes (id, name, city, department, salary)
 Department with attributes (id, name)
 Company with attributes (id, name, revenue)
